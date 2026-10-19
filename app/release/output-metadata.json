@@ -1,18 +1,21 @@
 {
-  "version": 2,
+  "version": 3,
   "artifactType": {
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.bluetoothconnect",
-  "variantName": "processReleaseResources",
+  "applicationId": "com.xvsu.bluetoothconnect",
+  "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 1,
-      "versionName": "1.0",
+      "attributes": [],
+      "versionCode": 17,
+      "versionName": "2.8",
       "outputFile": "app-release.apk"
     }
-  ]
+  ],
+  "elementType": "File",
+  "minSdkVersionForDexing": 28
 }

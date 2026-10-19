@@ -18,6 +18,7 @@ import static android.content.res.Configuration.KEYBOARD_QWERTY;
 
 /** 首页只负责模式选择和设备入口。布局、颜色分别在 activity_main.xml 和 ui_colors.xml。 */
 public class MainActivity extends AppCompatActivity {
+    private static final int BLUETOOTH_PERMISSION_REQUEST = 1001;
     private String screenSize = "1280x720";
 
     @Override
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         addMode(modes, "系统输入法 + 辅助按键", "onscreen_keyboard");
         addMode(modes, "外接键盘 · 直接转发", "otg_real_keyboard");
         addMode(modes, "外接键盘 · 输入法转发", "otg_keyboard");
+        if (savedInstanceState == null && !BluetoothPermissions.canConnect(this)) {
+            requestBluetoothPermission();
+        }
     }
 
     private void addMode(RadioGroup group, String label, String value) {
@@ -56,9 +60,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        refreshDevices();
+    }
+
+    private void refreshDevices() {
         // 从系统蓝牙设置返回时刷新，显示刚刚配对的设备。
         LinearLayout devices = findViewById(R.id.choose_target);
         devices.removeAllViews();
+        // 在访问 BluetoothAdapter 或设备名称前完成权限检查。
+        if (!BluetoothPermissions.canConnect(this)) {
+            showDeviceHint(devices, "需要附近设备权限才能读取已配对设备并连接蓝牙键盘。");
+            MaterialButton authorize = new MaterialButton(this);
+            authorize.setText("授权附近设备");
+            authorize.setOnClickListener(view -> requestBluetoothPermission());
+            devices.addView(authorize);
+            MaterialButton settings = new MaterialButton(this, null,
+                    com.google.android.material.R.attr.materialButtonOutlinedStyle);
+            settings.setText("应用权限设置");
+            settings.setOnClickListener(view -> startActivity(new Intent(
+                    Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                    android.net.Uri.parse("package:" + getPackageName()))));
+            devices.addView(settings);
+            return;
+        }
         BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
         if (adapter == null || !adapter.isEnabled()) {
             showDeviceHint(devices, "蓝牙尚未开启，请在蓝牙设置中开启后返回。");
@@ -69,11 +93,29 @@ public class MainActivity extends AppCompatActivity {
                     com.google.android.material.R.attr.materialButtonOutlinedStyle);
             button.setText(device.getName());
             button.setAllCaps(false);
-            button.setOnClickListener(view -> openKeyboard(device.getName()));
+            String deviceName = device.getName();
+            button.setOnClickListener(view -> openKeyboard(deviceName));
             devices.addView(button, new LinearLayout.LayoutParams(-1, -2));
         }
         if (devices.getChildCount() == 0) {
             showDeviceHint(devices, "暂无已配对设备\n请先在蓝牙设置中配对电脑，然后返回此页。");
+        }
+    }
+
+    private void requestBluetoothPermission() {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+            androidx.core.app.ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.BLUETOOTH_CONNECT},
+                    BLUETOOTH_PERMISSION_REQUEST);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == BLUETOOTH_PERMISSION_REQUEST) {
+            // 同意后显示设备；拒绝后保留说明和设置入口，不循环请求。
+            refreshDevices();
         }
     }
 
@@ -86,6 +128,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openKeyboard(String deviceName) {
+        if (!BluetoothPermissions.canConnect(this)) {
+            refreshDevices();
+            return;
+        }
         Class<?> activity;
         switch (screenSize) {
             case "onscreen_keyboard": activity = OnScreenKeyboardActivity.class; break;
