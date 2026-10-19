@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自适应主键盘：五行等高，键宽由 layout_weight 控制，不依赖设备分辨率。 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="5dp" android:orientation="vertical" android:background="@color/ui_background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/backquote" android:text="`" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_1" android:text="1" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_2" android:text="2" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_3" android:text="3" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_4" android:text="4" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_5" android:text="5" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_6" android:text="6" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_7" android:text="7" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_8" android:text="8" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_9" android:text="9" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_0" android:text="0" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/hyphen" android:text="−" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/equal" android:text="=" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/back" android:contentDescription="Backspace" android:text="⌫" android:layout_weight="1.7" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/tab" android:text="Tab" android:layout_weight="1.5" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_q" android:text="Q" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_w" android:text="W" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_e" android:text="E" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_r" android:text="R" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_t" android:text="T" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_y" android:text="Y" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_u" android:text="U" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_i" android:text="I" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_o" android:text="O" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_p" android:text="P" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/left_square" android:text="[" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/right_square" android:text="]" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/back_slach" android:text="\\" android:layout_weight="1.2" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/ctrl" android:text="Ctrl" android:layout_weight="1.7" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_a" android:text="A" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_s" android:text="S" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_d" android:text="D" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_f" android:text="F" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_g" android:text="G" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_h" android:text="H" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_j" android:text="J" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_k" android:text="K" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_l" android:text="L" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/semicolon" android:text=";" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/single_quote" android:text="'" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/enter" android:text="Enter" android:layout_weight="2" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/shift" android:text="Shift" android:layout_weight="2.1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_z" android:text="Z" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_x" android:text="X" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_c" android:text="C" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_v" android:text="V" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_b" android:text="B" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_n" android:text="N" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_m" android:text="M" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_comma" android:text="," android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_period" android:text="." android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/char_slash" android:text="/" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/up" android:text="↑" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/delete" android:text="Del" android:layout_weight="1.6" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/window" android:text="Win" android:layout_weight="1.5" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/alt" android:text="Alt" android:layout_weight="1.5" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/space" android:text="Space" android:layout_weight="7" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.Key" android:id="@+id/question" android:text="?" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/left" android:text="←" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/down" android:text="↓" android:layout_weight="1" />
+        <com.google.android.material.button.MaterialButton style="@style/Widget.BluetoothConnect.SpecialKey" android:id="@+id/right" android:text="→" android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

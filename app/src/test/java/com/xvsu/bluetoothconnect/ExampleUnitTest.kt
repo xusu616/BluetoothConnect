@@ -1,4 +1,4 @@
-package com.example.bluetoothconnect
+package com.xvsu.bluetoothconnect
 
 import org.junit.Test
 

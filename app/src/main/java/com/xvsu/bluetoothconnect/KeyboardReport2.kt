@@ -1,11 +1,10 @@
-package com.example.bluetoothconnect
+package com.xvsu.bluetoothconnect
 
 import android.view.KeyEvent
 import kotlin.experimental.and
 import kotlin.experimental.or
 
-@Suppress("EXPERIMENTAL_FEATURE_WARNING")
-inline class KeyboardReport2 (
+class KeyboardReport2 (
     val bytes: ByteArray = ByteArray(3) {0}
 ) {
 
@@ -293,8 +292,9 @@ inline class KeyboardReport2 (
             KeyEvent.KEYCODE_SYSRQ to 70,
 
             KeyEvent.KEYCODE_SCROLL_LOCK to 71,
+            KeyEvent.KEYCODE_BREAK to 72,
             KeyEvent.KEYCODE_INSERT to 73,
-            KeyEvent.KEYCODE_HOME to 74,
+            KeyEvent.KEYCODE_MOVE_HOME to 74,
             KeyEvent.KEYCODE_PAGE_UP to 75,
             KeyEvent.KEYCODE_FORWARD_DEL to 76,
             KeyEvent.KEYCODE_MOVE_END to 77,

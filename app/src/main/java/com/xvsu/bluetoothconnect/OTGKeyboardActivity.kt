@@ -1,4 +1,4 @@
-package com.example.bluetoothconnect
+package com.xvsu.bluetoothconnect
 
 import android.bluetooth.*
 import android.content.*
@@ -63,7 +63,7 @@ class OTGKeyboardActivity : AppCompatActivity() {
 
     inner class ServiceConnectedReceiver: BroadcastReceiver(){
         override fun onReceive(p0: Context?, p1: Intent?) {
-            if (p1?.action.equals("com.example.bluetoothconnect.service")){
+            if (p1?.action.equals("com.xvsu.bluetoothconnect.service")){
 
 //                val result = p1?.getSerializableExtra("d") as IntentData
 
@@ -113,7 +113,7 @@ class OTGKeyboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_otgkeyboard)
 
-        val filter = IntentFilter("com.example.bluetoothconnect.service")
+        val filter = IntentFilter("com.xvsu.bluetoothconnect.service")
         this.registerReceiver(ServiceConnectedReceiver(), filter)
 
         val intent = intent

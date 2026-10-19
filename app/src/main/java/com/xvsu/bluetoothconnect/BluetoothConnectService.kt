@@ -1,4 +1,4 @@
-package com.example.bluetoothconnect
+package com.xvsu.bluetoothconnect
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -61,7 +61,7 @@ class BluetoothConnectService: Service() {
 
 //                        val d = IntentData(bthid, btAdapter)
                         val intent = Intent()
-                        intent.action = "com.example.bluetoothconnect.service"
+                        intent.action = "com.xvsu.bluetoothconnect.service"
                         intent.putExtra("d","d")
                         sendBroadcast(intent)
 

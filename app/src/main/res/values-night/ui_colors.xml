@@ -1,0 +1,10 @@
+<resources>
+    <color name="ui_background">#111722</color>
+    <color name="ui_surface">#1A2230</color>
+    <color name="ui_key">#263143</color>
+    <color name="ui_key_special">#303F59</color>
+    <color name="ui_text">#E8EFFB</color>
+    <color name="ui_muted">#A6B5CA</color>
+    <color name="ui_primary">#B0C6FF</color>
+    <color name="ui_on_primary">#122D60</color>
+</resources>
